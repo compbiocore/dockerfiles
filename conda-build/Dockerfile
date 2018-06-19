@@ -2,7 +2,7 @@ FROM centos:6
 LABEL maintainer "Mark Howison <mhowison@brown.edu>"
 LABEL repository mhowison
 LABEL image conda-build
-LABEL tag v2
+LABEL tag v3
 
 RUN yum update -y
 RUN yum install -y \
@@ -14,6 +14,7 @@ RUN yum install -y \
   libXt-devel  \
   libXtst-devel \
   java-1.7.0-openjdk-devel \
+  git \
   patch \
   redhat-lsb-core \
   sudo \
