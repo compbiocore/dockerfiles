@@ -2,7 +2,7 @@ FROM centos:6
 LABEL maintainer "Mark Howison <mhowison@brown.edu>"
 LABEL repository mhowison
 LABEL image conda-build
-LABEL tag v4
+LABEL tag v5
 
 RUN yum update -y
 RUN yum install -y \
@@ -43,3 +43,4 @@ ENV PATH /home/conda/miniconda2/bin:$PATH
 RUN conda install -y conda-build anaconda-client gcc
 RUN conda clean -ay
 RUN conda config --prepend channels conda-forge
+RUN conda config --prepend channels compbiocore
