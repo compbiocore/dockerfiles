@@ -40,7 +40,8 @@ RUN cd /home/conda \
 
 ENV PATH /home/conda/miniconda2/bin:$PATH
 
-RUN conda install -y conda-build anaconda-client gcc
+RUN conda install -y conda-build anaconda-client
 RUN conda clean -ay
 RUN conda config --prepend channels conda-forge
 RUN conda config --prepend channels compbiocore
+RUN conda update -n base conda
