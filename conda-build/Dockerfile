@@ -1,8 +1,8 @@
 FROM centos:6
-LABEL maintainer "Mark Howison <mhowison@brown.edu>"
-LABEL repository mhowison
+LABEL maintainer "Andrew Leith <andrew_leith@brown.edu>"
+LABEL repository compbiocore/dockerfiles
 LABEL image conda-build
-LABEL tag v5
+LABEL tag v2
 
 RUN yum update -y
 RUN yum install -y \
