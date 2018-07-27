@@ -45,3 +45,4 @@ RUN conda clean -ay
 RUN conda config --prepend channels conda-forge
 RUN conda config --prepend channels compbiocore
 RUN conda update -n base conda
+RUN conda update gmp isl mpfr mpc
