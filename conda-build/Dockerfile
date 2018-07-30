@@ -2,7 +2,7 @@ FROM centos:6
 LABEL maintainer "Andrew Leith <andrew_leith@brown.edu>"
 LABEL repository compbiocore/dockerfiles
 LABEL image conda-build
-LABEL tag v2
+LABEL tag gcc_4_8_5
 
 RUN yum update -y
 RUN yum install -y \
@@ -40,9 +40,7 @@ RUN cd /home/conda \
 
 ENV PATH /home/conda/miniconda2/bin:$PATH
 
-RUN conda install -y conda-build anaconda-client
+RUN conda install -y conda-build anaconda-client gcc
 RUN conda clean -ay
 RUN conda config --prepend channels conda-forge
 RUN conda config --prepend channels compbiocore
-RUN conda update -n base conda
-RUN conda install -y gmp isl mpfr mpc gcc
