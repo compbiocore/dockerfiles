@@ -30,3 +30,7 @@ To access the tagging screen, click on the repository depicted in the screenshot
 **It is imperative that this tag be manually incremented before pushing a new version of the dockerfile** (not including when pushing bug fixes etcetera).  Any push will be built using the specified tag, meaning old versions will be overwritten unless the tag is updated.  This update must be manual, as autobuild is unable to parse the `LABEL tag [version]` information from inside the dockerfile.
 
 Be absolutely sure you've updated the tag as instructed before pushing, else an important image may be accidentally overwritten.
+
+### Tagging
+
+Tags are to be named for the version of GCC used in the image. e.g. `gcc_5_4_0`.
