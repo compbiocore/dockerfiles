@@ -2,7 +2,7 @@ FROM centos:6
 LABEL maintainer "Andrew Leith <andrew_leith@brown.edu>"
 LABEL repository compbiocore/dockerfiles
 LABEL image conda-build
-LABEL tag gcc_4_8_5
+LABEL tag v2
 
 RUN yum update -y
 RUN yum install -y \
@@ -15,7 +15,6 @@ RUN yum install -y \
   libXtst-devel \
   java-1.7.0-openjdk-devel \
   git \
-  nano \
   patch \
   redhat-lsb-core \
   sudo \
@@ -41,7 +40,10 @@ RUN cd /home/conda \
 
 ENV PATH /home/conda/miniconda2/bin:$PATH
 
-RUN conda install -y conda-build anaconda-client gcc
+RUN conda install -y conda-build anaconda-client
 RUN conda clean -ay
 RUN conda config --prepend channels conda-forge
 RUN conda config --prepend channels compbiocore
+RUN conda update -n base conda
+RUN conda install -y gmp isl mpfr mpc gcc
+RUN conda install -y -c conda-forge perl=5.26.2
