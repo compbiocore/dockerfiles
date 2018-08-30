@@ -14,6 +14,7 @@ RUN yum install -y \
   libXt-devel  \
   libXtst-devel \
   java-1.7.0-openjdk-devel \
+  nano \
   git \
   patch \
   redhat-lsb-core \
