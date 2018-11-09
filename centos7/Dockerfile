@@ -15,6 +15,7 @@ RUN yum install -y \
   libXtst-devel \
   java-1.7.0-openjdk-devel \
   nano \
+  gcc \
   git \
   patch \
   redhat-lsb-core \
@@ -46,6 +47,7 @@ RUN conda clean -ay
 RUN conda config --prepend channels conda-forge
 RUN conda config --prepend channels compbiocore
 RUN conda update -n base conda
-RUN conda install -y gmp isl mpfr mpc
-# RUN sudo yum install -y gcc
+RUN conda install -y gmp isl mpfr mpc gcc
 RUN conda install -y -c conda-forge perl=5.26.2
+RUN export PATH=/usr/local/bin:$PATH
+RUN export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH
