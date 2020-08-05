@@ -6,7 +6,8 @@ RUN apt-get install -y \
 	libxml2 \
 	libstdc++6 \
 	libz-dev \
-	libglpk-dev
+	libglpk-dev \
+	libpng-dev
 
 RUN apt-get clean all
 
