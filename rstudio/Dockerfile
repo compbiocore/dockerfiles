@@ -10,3 +10,5 @@ RUN apt-get install -y \
 
 RUN apt-get clean all
 
+RUN wget https://raw.githubusercontent.com/compbiocore/dockerfiles/master/rstudio/r_package_list.R \
+	&& Rscript r_package_list.R

@@ -1,1 +1,1 @@
-install.packages(c("Seurat", "patchwork", "ggplot2", "dplyr", "future"))
+install.packages(c("Seurat", "patchwork", "ggplot2", "dplyr", "future"), repos="http://cran.rstudio.com/")
